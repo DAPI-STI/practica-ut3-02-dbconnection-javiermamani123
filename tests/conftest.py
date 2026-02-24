@@ -3,6 +3,9 @@ import pytest
 
 from src.db import get_connection
 
+from dotenv import load_dotenv
+load_dotenv()
+
 
 def _db_config_present() -> bool:
     # Para ejecutar tests de BD se requiere configuración explícita.
