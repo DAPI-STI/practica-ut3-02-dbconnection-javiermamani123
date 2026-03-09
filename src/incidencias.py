@@ -1,5 +1,5 @@
 from mysql.connector.connection import MySQLConnection
-from db import execute, fetch_all  # importación relativa, como la tenías antes
+from .db import execute, fetch_all  # importación relativa, como la tenías antes
 
 
 def listar_incidencias_activas(conn: MySQLConnection) -> list[dict]:
@@ -8,7 +8,7 @@ def listar_incidencias_activas(conn: MySQLConnection) -> list[dict]:
 
     Requisitos:
     - Debe devolver una lista de diccionarios (una fila por dict).
-    - Debe ordenar primero por prioridad (alta > media > baja) y luego por fecha_apertura ascendente.
+    - Debe ordenar primero por prioridad (alta > media > baja) y luego por fecha_apertura ascendente. 
     - Debe usar fetch_all(conn, sql, params) para ejecutar el SELECT.
 
     Pista: se puede ordenar por prioridad usando CASE en SQL.

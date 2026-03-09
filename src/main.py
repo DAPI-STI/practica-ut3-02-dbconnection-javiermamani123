@@ -1,5 +1,5 @@
-from db import get_connection
-from incidencias import crear_incidencia, listar_incidencias_activas
+from src.db import get_connection
+from src.incidencias import crear_incidencia, listar_incidencias_activas
 
 def main():
     try:
