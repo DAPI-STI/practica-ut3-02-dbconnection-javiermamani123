@@ -1,3 +1,24 @@
+from db import get_connection
+from incidencias import crear_incidencia
+
+def main():
+    conn = get_connection()
+
+    filas = crear_incidencia(
+        conn,
+        equipo_id=1,
+        descripcion="El ordenador no enciende",
+        prioridad="alta"
+    )
+
+    print("Incidencias creadas:", filas)
+
+    conn.close()
+
+if __name__ == "__main__":
+    main()
+
+
 from __future__ import annotations
 
 from db import get_connection

@@ -1,6 +1,5 @@
 from mysql.connector.connection import MySQLConnection
-
-from .db import execute, fetch_all
+from db import execute, fetch_all  # importación relativa, como la tenías antes
 
 
 def listar_incidencias_activas(conn: MySQLConnection) -> list[dict]:
@@ -196,4 +195,3 @@ def detalle_incidencias_join(conn: MySQLConnection) -> list[dict]:
             i.fecha_apertura ASC
     """
     return fetch_all(conn, sql)
-
